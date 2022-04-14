@@ -40,9 +40,9 @@ function App() {
    useEffect(()=>{
      const getPins=async ()=>{
          try{
-           console.log("hello");
+           
            const allPins=await axios.get("https://mempin.herokuapp.com/pins");
-           console.log(allPins.data);
+
            setPins(allPins.data);
          }catch(err){
            console.log(err);
@@ -90,7 +90,7 @@ console.log(newPin);
 
   try{
 
-    const res=await axios.post("http://localhost:8000/pins",{...newPin});
+    const res=await axios.post("https://mempin.herokuapp.com/pins",{...newPin});
     setPins([...pins,res.data]);
     setNewPlace(null);
 
